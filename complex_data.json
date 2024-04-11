@@ -1,0 +1,80 @@
+{
+  "university": {
+    "name": "Grand University",
+    "location": {
+      "city": "Metropolis",
+      "country": "USA",
+      "campuses": [
+        {
+          "name": "Main Campus",
+          "address": "123 University Ave",
+          "facilities": [
+            {
+              "name": "Library",
+              "floors": 5,
+              "staff": ["Alice", "Bob", "Charlie"]
+            },
+            {
+              "name": "Laboratories",
+              "equipment": ["Microscopes", "Test tubes", "Bunsen burners"]
+            }
+          ]
+        },
+        {
+          "name": "Downtown Campus",
+          "address": "456 College St",
+          "facilities": [
+            {
+              "name": "Computer Lab",
+              "computers": 50,
+              "staff": ["David", "Eva"]
+            },
+            {
+              "name": "Gymnasium",
+              "equipment": ["Treadmills", "Weights", "Yoga mats"],
+              "staff": []
+            }
+          ]
+        }
+      ]
+    },
+    "departments": [
+      {
+        "name": "Computer Science",
+        "head": "Dr. Smith",
+        "courses": [
+          {
+            "code": "CS101",
+            "name": "Introduction to Computer Science",
+            "instructor": "Prof. Johnson",
+            "students": ["John", "Emily", "Michael"]
+          },
+          {
+            "code": "CS202",
+            "name": "Data Structures and Algorithms",
+            "instructor": "Prof. Williams",
+            "students": ["Sophia", "Daniel", "Olivia"]
+          }
+        ]
+      },
+      {
+        "name": "Biology",
+        "head": "Dr. Brown",
+        "courses": [
+          {
+            "code": "BIO101",
+            "name": "Introduction to Biology",
+            "instructor": "Prof. Martinez",
+            "students": ["Liam", "Ava", "Noah"]
+          },
+          {
+            "code": "BIO202",
+            "name": "Genetics",
+            "instructor": "Prof. Thompson",
+            "students": ["Isabella", "James", "Mia"]
+          }
+        ]
+      }
+    ]
+  }
+}

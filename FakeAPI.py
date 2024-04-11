@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask, request, jsonify, g
 import sqlite3
 
@@ -407,7 +409,6 @@ def update_order(order_id):
     if not order:
         return jsonify(message="Order not found"), 404
 
-
     # Validate quantity format if provided
     if 'quantity' in data:
         if not isinstance(data['quantity'], int) or data['quantity'] <= 0:
@@ -487,7 +488,6 @@ def create_category():
     if len(data['name']) > 50:
         return jsonify(message="Name must be less than 50 characters long"), 400
 
-
     # Insert category into database
     query = "INSERT INTO categories (name) VALUES (?)"
     args = (data['name'],)
@@ -526,7 +526,6 @@ def delete_category(category_id):
     if not category:
         return jsonify(message="Category not found"), 404
 
-
     # Delete category from database
     query = "DELETE FROM categories WHERE id = ?"
     execute_query(query, (category_id,))
@@ -550,7 +549,6 @@ def get_tag(tag_id):
     if not tag:
         return jsonify(message="Tag not found"), 404
 
-
     # If tag exists, return its data
     tag_data = tag[0]
     tag_obj = Tag(*tag_data)
@@ -568,7 +566,6 @@ def create_tag():
     if len(data['name']) > 50:
         return jsonify(message="Name must be less than 50 characters long"), 400
 
-
     # Insert tag into database
     query = "INSERT INTO tags (name) VALUES (?)"
     args = (data['name'],)
@@ -584,7 +581,6 @@ def update_tag(tag_id):
     tag = execute_query(query, (tag_id,))
     if not tag:
         return jsonify(message="Tag not found"), 404
-
 
     # Validate name length if provided
     if 'name' in data and len(data['name']) > 50:
@@ -614,5 +610,18 @@ def delete_tag(tag_id):
     return jsonify({"message": "Tag deleted successfully"}), 204
 
 
+@app.route('/complex-json-file', methods=['GET'])
+def get_json_file():
+    try:
+        # Read the JSON file
+        with open('complex_data.json', 'r') as file:
+            json_data = json.load(file)
+        # Return the JSON data as the response
+        return jsonify(json_data)
+    except Exception as e:
+        # Handle any exceptions and return an error response
+        return jsonify({'error': str(e)}), 500
+
+
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(debug=True, port=8000)
