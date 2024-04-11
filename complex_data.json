@@ -12,10 +12,13 @@
             {
               "name": "Library",
               "floors": 5,
-              "staff": ["Alice", "Bob", "Charlie"]
+              "staff": ["Alice", "Bob", "Charlie"],
+              "equipment": null
             },
             {
               "name": "Laboratories",
+              "floors": null,
+              "staff": null,
               "equipment": ["Microscopes", "Test tubes", "Bunsen burners"]
             }
           ]
@@ -26,13 +29,15 @@
           "facilities": [
             {
               "name": "Computer Lab",
-              "computers": 50,
-              "staff": ["David", "Eva"]
+              "floor": 6,
+              "staff": ["David", "Eva"],
+              "equipment": null
             },
             {
               "name": "Gymnasium",
-              "equipment": ["Treadmills", "Weights", "Yoga mats"],
-              "staff": []
+              "floor": null,
+              "staff": null,
+              "equipment": ["Treadmills", "Weights", "Yoga mats"]
             }
           ]
         }
